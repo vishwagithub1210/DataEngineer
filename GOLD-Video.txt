@@ -1,0 +1,101 @@
+GOLD Video
+
+Hadoop
+
+1. what is hadoop?
+
+Hadoop is distributed framework which has distributed storage and distributed processing mechanism. It use HDFS for distributed storage and Mapreduce for distributed processing. Hadoop is highly durable and easily scalable.
+
+* Durable means distributed storage and Scalability for increasing the name node.
+
+2. Components of hadoop?
+
+hadoop architecture consist of NameNode, Standby NameNode, Datanodes, Journal Node and Zookeepar.
+
+
+3. What is the block sizo in Hadoop HDFS?
+
+128 mb default block in Hadoop 2.0.
+64 mb in Hadoop 1.0.
+
+4. What is fault tolerance in Hadoop?
+
+Hadoop has replication factor of 3 in which each block gets replicated in caes of any node failure (fault) can be handled.
+
+Hadoop-இல் 'replication factor' 3 ஆக உள்ளது; இதன் மூலம், ஏதேனும் ஒரு 'node' செயலிழந்தால் (கோளாறு ஏற்பட்டால்) அதைச் சமாளிக்கும் வகையில் ஒவ்வொரு 'block'-ம் நகலெடுக்கப்படுகிறது.
+
+5. What is safe mode in hadoop?
+
+When Name Node gets restarted. To cerate FS image (To serve client) name node goes safe mode and checkpointing (Merge Edit Log and FS image) and leave safe mode (Name Node in Un sericeable that time)
+
+
+6. What is heart beat intervel in Hadoop?
+
+3 Seconds is a Heart beat intervel. Data Node sends heart beat to the Name Node.
+
+
+7. What is FS image and Edit log in Hadoop?
+
+FS image in Name Node stores the Meta information of every transaction and about datanodes. Edit log is a temporary file which helps the chedckpointing for every one hour default it. Secondry Name Node helps for checkpointing.
+
+
+8. Under and Over replication in Hadoop?
+
+As default replication factor is 3. If ant Name Node goes down. The blocks in that data node has only two replication (Less then 3) in other name node which we call Under replication.
+
+
+9. Split brain scenario in Hadoop?
+
+If Name Node becomes active to writting the edit log to the Journal Node and when the recent active Name Node do the same.
+
+Zookeepar will send a fencing program to stop the write so that will not face the split brain scenario
+
+
+10. What is speculative execution in Hadoop?
+
+In Hadoop during Speculative execution, a certain number of duplicate tasks are launched. On a different slave node, mutiple copies of same map or reduce task can be executed using speculative execution.
+
+ChatGPT Answer:
+If one Map or Reduce task is running unusually slowly, Hadoop starts another copy of the same task on a different node. Whichever copy finishes first is used, and the slower copy is stopped.
+
+
+11. What is High Availability and Federation in Hadoop?
+
+The high availability feature in hadoop ensure the availiability of hadoop cluste without any downtime, even in unfavorable conditions like NameNode failure, DataNode failure, machine crash , etc. It means if the machine crashes, data will be accessible from another path.
+
+HDFS Federation improves the existing HDFS architecture through a clear separation of namespace and storage , enabling generic block storage layer. It enable support for multiple namspace in the cluster to improce scalability and isolation.
+
+ChatGPT Answer:
+Namespace = File/Folder organization
+NameNode = Manages the namespace
+HA = Protects NameNode
+Federation = Multiple NameNodes manage different namespaces
+
+
+Pending..........................
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SQOOP
+
+1. What is Sqoop and its feature?
+
+Apache is a BigData Tool for transfering data between Hadoop and relational database servers.Sqoop used to transfer data from RDBMS (Relational Database Management System) like MySql and Oracle to HDFS.
+
+
+2. Default Mappers in Sqoop?
+
+ChatGPT Answer:
+By default, Sqoop uses 4 mappers for parallel data import. We can change the number of mappers using --m or --num-mappers. The number of mappers determines the level of parallelism during the import.
+
+
+
+
+
+
+
+
+
+
+
+
